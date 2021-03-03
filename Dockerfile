@@ -6,7 +6,7 @@ WORKDIR /opt
 RUN usermod -u 99 nobody
 
 # Make directories
-RUN mkdir -p /downloads /config/qBittorrent /etc/openvpn /etc/qbittorrent
+RUN mkdir -p /media/plextak/Download /config/qBittorrent /etc/openvpn /etc/qbittorrent
 
 # Install boost
 RUN apt update \
@@ -208,7 +208,7 @@ RUN echo "deb http://deb.debian.org/debian/ buster non-free" > /etc/apt/sources.
     /tmp/* \
     /var/tmp/*
 
-VOLUME /config /downloads
+VOLUME /config /media/plextak/Download
 
 ADD openvpn/ /etc/openvpn/
 ADD qbittorrent/ /etc/qbittorrent/
